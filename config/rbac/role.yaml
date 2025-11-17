@@ -1,0 +1,41 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - quantum.quantum.io
+  resources:
+  - qiskitbackends
+  - qiskitbudgets
+  - qiskitjobs
+  - qiskitsessions
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - quantum.quantum.io
+  resources:
+  - qiskitbackends/finalizers
+  - qiskitbudgets/finalizers
+  - qiskitjobs/finalizers
+  - qiskitsessions/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - quantum.quantum.io
+  resources:
+  - qiskitbackends/status
+  - qiskitbudgets/status
+  - qiskitjobs/status
+  - qiskitsessions/status
+  verbs:
+  - get
+  - patch
+  - update

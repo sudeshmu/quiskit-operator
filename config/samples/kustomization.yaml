@@ -1,0 +1,7 @@
+## Append samples of your project ##
+resources:
+- quantum_v1_qiskitjob.yaml
+- quantum_v1_qiskitbackend.yaml
+- quantum_v1_qiskitbudget.yaml
+- quantum_v1_qiskitsession.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

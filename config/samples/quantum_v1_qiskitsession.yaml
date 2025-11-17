@@ -1,0 +1,9 @@
+apiVersion: quantum.quantum.io/v1
+kind: QiskitSession
+metadata:
+  labels:
+    app.kubernetes.io/name: qiskit-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: qiskitsession-sample
+spec:
+  # TODO(user): Add fields here

@@ -1,0 +1,47 @@
+apiVersion: quantum.io/v1
+kind: QiskitJob
+metadata:
+  name: bell-state-example
+  namespace: default
+  labels:
+    app: qiskit-operator
+    example: bell-state
+spec:
+  backend:
+    type: local_simulator
+  
+  circuit:
+    source: inline
+    code: |
+      from qiskit import QuantumCircuit
+      
+      # Create a 2-qubit Bell state (maximally entangled state)
+      qc = QuantumCircuit(2, 2)
+      
+      # Apply Hadamard gate to first qubit
+      qc.h(0)
+      
+      # Apply CNOT gate
+      qc.cx(0, 1)
+      
+      # Measure both qubits
+      qc.measure([0, 1], [0, 1])
+  
+  execution:
+    shots: 1024
+    optimizationLevel: 1
+    priority: normal
+  
+  output:
+    type: configmap
+    location: bell-state-results
+    format: json
+  
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+    limits:
+      cpu: "2"
+      memory: "4Gi"
+
