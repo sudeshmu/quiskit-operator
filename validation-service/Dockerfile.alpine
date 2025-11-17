@@ -1,0 +1,65 @@
+# QiskitOperator Validation Service - Alpine-based Dockerfile
+# Ultra-minimal image using Alpine Linux
+# Target size: ~250-350MB (aggressive optimization)
+#
+# Note: Alpine can have compatibility issues with some Python packages
+# Use this only if the standard optimized version doesn't work for your needs
+
+# ============================================
+# Stage 1: Builder
+# ============================================
+FROM python:3.11-alpine AS builder
+
+WORKDIR /build
+
+# Install build dependencies for Alpine
+RUN apk add --no-cache \
+    gcc \
+    g++ \
+    musl-dev \
+    linux-headers \
+    libffi-dev \
+    openblas-dev \
+    gfortran \
+    lapack-dev
+
+# Copy requirements
+COPY requirements.minimal.txt requirements.txt
+
+# Build wheels
+RUN pip wheel --no-cache-dir --wheel-dir /wheels -r requirements.txt
+
+# ============================================
+# Stage 2: Runtime
+# ============================================
+FROM python:3.11-alpine
+
+WORKDIR /app
+
+# Install only runtime libraries
+RUN apk add --no-cache \
+    libstdc++ \
+    openblas \
+    lapack
+
+# Copy wheels and install
+COPY --from=builder /wheels /wheels
+COPY --from=builder /build/requirements.txt .
+
+RUN pip install --no-cache-dir --no-index --find-links=/wheels -r requirements.txt \
+    && rm -rf /wheels
+
+# Copy application
+COPY main.py .
+
+# Create non-root user
+RUN adduser -D -u 1000 qiskit && chown -R qiskit:qiskit /app
+USER qiskit
+
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+

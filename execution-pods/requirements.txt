@@ -1,0 +1,6 @@
+# QiskitOperator Execution Pod Dependencies
+
+qiskit==1.0.0
+qiskit-aer==0.13.0
+numpy==1.24.3
+

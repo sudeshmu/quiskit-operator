@@ -1,0 +1,246 @@
+{
+  "timestamp": "2025-11-17T17:11:21.436584",
+  "total_duration": 3.751636266708374,
+  "summary": {
+    "total": 10,
+    "passed": 8,
+    "failed": 2,
+    "success_rate": 80.0
+  },
+  "results": [
+    {
+      "id": "01",
+      "name": "Bell State / Bell Test",
+      "file": "01_bell_state.py",
+      "category": "Entanglement",
+      "complexity": "Beginner",
+      "success": true,
+      "duration": 0.6543612480163574,
+      "validation": {
+        "valid": true,
+        "circuit_hash": "958c8ca5e2654cb63cb07a45b3b81c3d3de956b0a7b8b1ad845bbdfbbea8189e",
+        "depth": 3,
+        "qubits": 2,
+        "gates": 4,
+        "gate_types": {
+          "h": 1,
+          "cx": 1,
+          "measure": 2
+        },
+        "estimated_execution_time": 0.34,
+        "errors": [],
+        "warnings": []
+      },
+      "error": null
+    },
+    {
+      "id": "02",
+      "name": "Quantum Teleportation",
+      "file": "02_quantum_teleportation.py",
+      "category": "Quantum Communication",
+      "complexity": "Intermediate",
+      "success": true,
+      "duration": 0.0071222782135009766,
+      "validation": {
+        "valid": true,
+        "circuit_hash": "b0f5411d91511a970890f8f4a4c17acbef2b3e0253ed34fee94e3e2ef1ae7fac",
+        "depth": 8,
+        "qubits": 3,
+        "gates": 12,
+        "gate_types": {
+          "h": 3,
+          "cx": 3,
+          "barrier": 2,
+          "measure": 3,
+          "cz": 1
+        },
+        "estimated_execution_time": 0.92,
+        "errors": [],
+        "warnings": []
+      },
+      "error": null
+    },
+    {
+      "id": "03",
+      "name": "Quantum Fourier Transform",
+      "file": "03_quantum_fourier_transform.py",
+      "category": "Quantum Transform",
+      "complexity": "Intermediate",
+      "success": false,
+      "duration": 0.005652904510498047,
+      "validation": null,
+      "error": "Circuit creation failed: NameError: name 'qft_rotations' is not defined"
+    },
+    {
+      "id": "04",
+      "name": "Grover's Search Algorithm",
+      "file": "04_grover_search.py",
+      "category": "Search Algorithm",
+      "complexity": "Intermediate",
+      "success": true,
+      "duration": 0.008359909057617188,
+      "validation": {
+        "valid": true,
+        "circuit_hash": "00cd1babdc940d892907bbea00d76c53a018acb80bdfc77d763c5db126d1ff81",
+        "depth": 22,
+        "qubits": 3,
+        "gates": 51,
+        "gate_types": {
+          "h": 23,
+          "barrier": 5,
+          "x": 16,
+          "ccx": 4,
+          "measure": 3
+        },
+        "estimated_execution_time": 2.71,
+        "errors": [],
+        "warnings": []
+      },
+      "error": null
+    },
+    {
+      "id": "05",
+      "name": "Shor's Algorithm",
+      "file": "05_shor_algorithm.py",
+      "category": "Number Theory",
+      "complexity": "Advanced",
+      "success": true,
+      "duration": 0.008193016052246094,
+      "validation": {
+        "valid": true,
+        "circuit_hash": "581ce78e8ca579143e0ac396b7e0909b115fab666f1d1ff9087eb91cdc4275c6",
+        "depth": 37,
+        "qubits": 8,
+        "gates": 54,
+        "gate_types": {
+          "h": 8,
+          "barrier": 3,
+          "x": 1,
+          "cx": 30,
+          "swap": 2,
+          "cp": 6,
+          "measure": 4
+        },
+        "estimated_execution_time": 4.24,
+        "errors": [],
+        "warnings": []
+      },
+      "error": null
+    },
+    {
+      "id": "06",
+      "name": "Quantum Random Number Generator",
+      "file": "06_quantum_random_number_generator.py",
+      "category": "Random Generation",
+      "complexity": "Beginner",
+      "success": true,
+      "duration": 0.005347013473510742,
+      "validation": {
+        "valid": true,
+        "circuit_hash": "06acdf88c93aacd2fa8203410ae7ca59daaa402d2b94935fcdf60a79dc59cdc9",
+        "depth": 2,
+        "qubits": 8,
+        "gates": 17,
+        "gate_types": {
+          "h": 8,
+          "barrier": 1,
+          "measure": 8
+        },
+        "estimated_execution_time": 0.37,
+        "errors": [],
+        "warnings": []
+      },
+      "error": null
+    },
+    {
+      "id": "07",
+      "name": "Variational Quantum Eigensolver",
+      "file": "07_vqe_circuit.py",
+      "category": "Quantum Chemistry",
+      "complexity": "Advanced",
+      "success": true,
+      "duration": 0.006299018859863281,
+      "validation": {
+        "valid": true,
+        "circuit_hash": "5b5520e6ac9580ff96b6078aebcca1d71d6804024c587b4136b40e3713fa6353",
+        "depth": 6,
+        "qubits": 2,
+        "gates": 14,
+        "gate_types": {
+          "ry": 6,
+          "barrier": 4,
+          "cx": 2,
+          "measure": 2
+        },
+        "estimated_execution_time": 0.7400000000000001,
+        "errors": [],
+        "warnings": []
+      },
+      "error": null
+    },
+    {
+      "id": "08",
+      "name": "Bernstein-Vazirani Algorithm",
+      "file": "08_bernstein_vazirani.py",
+      "category": "Query Algorithm",
+      "complexity": "Intermediate",
+      "success": false,
+      "duration": 0.006319999694824219,
+      "validation": null,
+      "error": "Circuit creation failed: NameError: name 'enumerate' is not defined"
+    },
+    {
+      "id": "09",
+      "name": "Deutsch-Jozsa Algorithm",
+      "file": "09_deutsch_jozsa.py",
+      "category": "Query Algorithm",
+      "complexity": "Intermediate",
+      "success": true,
+      "duration": 0.005300045013427734,
+      "validation": {
+        "valid": true,
+        "circuit_hash": "d63a8f3073219131c1f66225ae733f082e07710c0c33a491982aa3030fdadcd2",
+        "depth": 7,
+        "qubits": 4,
+        "gates": 17,
+        "gate_types": {
+          "x": 1,
+          "h": 7,
+          "barrier": 3,
+          "cx": 3,
+          "measure": 3
+        },
+        "estimated_execution_time": 0.8700000000000001,
+        "errors": [],
+        "warnings": []
+      },
+      "error": null
+    },
+    {
+      "id": "10",
+      "name": "GHZ State Creation",
+      "file": "10_ghz_state.py",
+      "category": "Entanglement",
+      "complexity": "Beginner",
+      "success": true,
+      "duration": 0.006018161773681641,
+      "validation": {
+        "valid": true,
+        "circuit_hash": "23ce17ea696898b9647a88d6f223ebd72cd943a7cfa653272bf58bed0bd3897a",
+        "depth": 6,
+        "qubits": 5,
+        "gates": 12,
+        "gate_types": {
+          "h": 1,
+          "barrier": 2,
+          "cx": 4,
+          "measure": 5
+        },
+        "estimated_execution_time": 0.7200000000000001,
+        "errors": [],
+        "warnings": []
+      },
+      "error": null
+    }
+  ]
+}
